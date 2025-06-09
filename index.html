@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafael | Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+
+    <div class="intro-overlay">
+     <div class="welcome-message">
+      <span id="typewriter"></span>
+     </div>
+    </div>
+
+
+  <!-- Toggle Theme -->
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="toggle-theme">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Capa -->
+  <header class="profile-header">
+    <div class="header-overlay"></div>
+    <div class="profile-info">
+      <img class="avatar" src="img/perfilml.jpg" alt="Foto de perfil" />
+      <h1>Rafael</h1>
+      <p>@unkdep</p>
+        <div class="social-links">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/unkdep/" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm4.5-.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
+            </svg>
+        </a>
+
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/user/" target="_blank" aria-label="Spotify">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.004 0a12 12 0 100 24 12 12 0 000-24zm5.553 17.498a.749.749 0 01-1.032.228c-2.824-1.729-6.384-2.117-10.597-1.151a.749.749 0 01-.342-1.46c4.615-1.081 8.558-.638 11.7 1.321a.75.75 0 01.271 1.062zm1.482-3.217a.937.937 0 01-1.29.283c-3.236-1.989-8.162-2.566-11.98-1.396a.938.938 0 01-.557-1.793c4.309-1.339 9.737-.707 13.434 1.623a.937.937 0 01.293 1.283zm.154-3.449c-3.92-2.321-10.408-2.53-14.158-1.377a1.125 1.125 0 01-.668-2.146c4.328-1.349 11.478-1.105 15.878 1.616a1.125 1.125 0 01-1.052 1.907z"/>
+            </svg>
+        </a>
+        </div>
+
+        <section class="spotify-player">
+  <iframe 
+    src="https://open.spotify.com/embed/track/2PpYJcgJN6PzozUv7rU669" 
+    width="300" 
+    height="80" 
+    frameborder="0" 
+    allowtransparency="true" 
+    allow="encrypted-media" 
+    loading="lazy"
+  ></iframe>
+</section>
+
+  </header>
+
+  <!-- Galeria -->
+  <main class="gallery-section">
+    <div class="gallery-grid">
+      <img src="img/foto3.jpg" alt="Imagem" />
+      <img src="img/foto1.jpg" alt="Imagem" />
+      <img src="img/foto7.jpg" alt="Imagem" />
+      <img src="img/foto4.jpg" alt="Imagem" />
+      <img src="img/foto12.jpg" alt="Imagem" />
+      <img src="img/foto6.jpg" alt="Imagem" />
+      <img src="img/foto2.jpg" alt="Imagem" />
+      <img src="img/foto8.jpg" alt="Imagem" />
+      <img src="img/foto5.jpg" alt="Imagem" />
+      <img src="img/foto9.jpg" alt="Imagem" />
+      <img src="img/foto11.jpg" alt="Imagem" />
+      <img src="img/foto10.jpg" alt="Imagem" />
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="close-lightbox">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Imagem ampliada" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Rafael | @unkdep Profile</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('toggle-theme');
+    const body = document.body;
+
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+    });
+
+    // Lightbox
+    const images = document.querySelectorAll('.gallery-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.getElementById('close-lightbox');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('show');
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
+      }
+    });
+
+const text = [
+  "Bem-vindo(a)",
+  "Carregando perfil...",
+  "Conectando emoções...",
+  "Pronto! Seja bem-vindo(a)"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type() {
+  const overlay = document.querySelector('.intro-overlay');
+
+  if (count === text.length) {
+    overlay.classList.add('hide');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 1000); // tempo igual ao transition do CSS
+    return;
+  }
+
+  currentText = text[count];
+  letter = currentText.slice(0, ++index);
+
+  document.getElementById('typewriter').textContent = letter;
+
+  if (letter.length === currentText.length) {
+    count++;
+    index = 0;
+    setTimeout(type, 800);
+  } else {
+    setTimeout(type, 50);
+  }
+}
+
+window.addEventListener('load', type);
+
+
+  window.addEventListener('load', type);
+  </script>
+
+</body>
+</html>

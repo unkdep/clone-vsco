@@ -1,0 +1,304 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Themes */
+body.dark {
+  background-color: #0a0a0a;
+  color: white;
+}
+
+body.light {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+/* Header */
+.profile-header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('img/imgfundo1.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+body.light .header-overlay {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-info {
+  position: relative;
+  text-align: center;
+}
+
+.profile-info h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.profile-info p {
+  color: #bbb;
+  margin-top: 4px;
+}
+
+body.light .profile-info p {
+  color: #444;
+}
+
+/* Avatar */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+
+/* Galeria */
+.gallery-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  display: none;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+.close:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #1a1a1a;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+body.light .footer {
+  border-top: 1px solid #ccc;
+  color: #777;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.theme-toggle label {
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  background-color: #444;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  transform: translateX(24px);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .profile-info h1 {
+    font-size: 2rem;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.social-links svg {
+  color: white; /* Para tema escuro */
+  transition: color 0.3s;
+}
+
+body.light .social-links svg {
+  color: #111; /* Para tema claro */
+}
+
+.social-links svg:hover {
+  transform: scale(1.2);
+  color: #1db954; /* Verde no hover se quiser, estilo Spotify */
+  transition: transform 0.3s, color 0.3s;
+}
+
+.spotify-player {
+  margin: 40px auto;
+  text-align: center;
+  max-width: 320px;
+  color: #bbb;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body.light .spotify-player {
+  color: #444;
+}
+
+.spotify-player h2 {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.profile-header {
+  height: auto !important;    /* Permite altura variável */
+  padding: 40px 20px;         /* Espaçamento interno para não grudar */
+  flex-direction: column !important; /* Empilha os itens verticalmente */
+  gap: 20px;                  /* Espaço entre os itens */
+}
+
+.profile-info h1 {
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-info h1:hover {
+  color: #d4d8d6;      /* Verde Spotify, ou outra cor que quiser */
+  transform: scale(1.1);
+}
+
+
+/* Tela preta cobrindo tudo no início */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.intro-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mensagem digitando */
+.welcome-message {
+  color: #eff5f1;
+  background-color: rgba(10, 10, 10, 0.7);
+  padding: 20px 40px;
+  border-radius: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
