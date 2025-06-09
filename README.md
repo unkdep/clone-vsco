@@ -24,9 +24,13 @@ Acesse o projeto publicado no Netlify:
 🛠️ Tecnologias Utilizadas 🛠️
 
 •HTML5
+
 •CSS
+
 •JavaScript
+
 •Flexbox e Grid Layout
+
 •Media Queries para responsividade
 
 
@@ -34,9 +38,14 @@ Acesse o projeto publicado no Netlify:
 📁 Estrutura de Arquivos 📁
 
 profile/
+
 ├── index.html
+
 ├── style.css
+
 └── README.md
+
+
 
 🚀 Como Rodar Localmente 🚀
 
@@ -55,6 +64,8 @@ cd clone-vsco
 🚧 Status do Projeto 🚧
 
 ✔️ Finalizado — mas aberto para melhorias visuais ou responsivas no futuro.
+
+
 
 
 
