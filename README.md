@@ -53,7 +53,9 @@ cd clone-vsco
 
 
 🚧 Status do Projeto 🚧
+
 ✔️ Finalizado — mas aberto para melhorias visuais ou responsivas no futuro.
+
 
 
 ![Preview do Projeto](img/vsco.png)
