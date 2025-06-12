@@ -27,12 +27,12 @@ Acesse o projeto publicado no Netlify:
 * Media Queries para responsividade  
 
 ## **📁 Estrutura de Arquivos**
-
+```
 profile/
 ├── index.html
 ├── style.css
 └── README.md
-
+```
 
 ## **🚀 Como Rodar Localmente**
 
